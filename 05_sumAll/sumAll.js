@@ -1,10 +1,6 @@
 const sumAll = function(firstNum, secondNum) {
     if (firstNum <= 0 || secondNum <= 0 || !Number.isInteger(firstNum) || !Number.isInteger(secondNum)) return "ERROR";
-    if (secondNum < firstNum) {
-        const tempNum = firstNum;
-        firstNum = secondNum;
-        secondNum = tempNum;
-    }
+    if (secondNum < firstNum) [firstNum, secondNum] = [secondNum, firstNum];
 
     let sum = 0;
     for (i = firstNum; i <= secondNum; i++) {
