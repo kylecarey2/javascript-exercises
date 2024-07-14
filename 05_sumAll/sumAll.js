@@ -1,5 +1,16 @@
-const sumAll = function() {
+const sumAll = function(firstNum, secondNum) {
+    if (firstNum <= 0 || secondNum <= 0 || !Number.isInteger(firstNum) || !Number.isInteger(secondNum)) return "ERROR";
+    if (secondNum < firstNum) {
+        const tempNum = firstNum;
+        firstNum = secondNum;
+        secondNum = tempNum;
+    }
 
+    let sum = 0;
+    for (i = firstNum; i <= secondNum; i++) {
+        sum += i;
+    }
+    return sum;
 };
 
 // Do not edit below this line
